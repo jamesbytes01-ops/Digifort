@@ -8,6 +8,7 @@ import { useCart } from '@/context/CartContext';
 import { BRANDS_DATA } from '@/data/brands';
 
 import { DigifortLogo } from './DigifortLogo';
+import { BrandLogo } from './BrandLogo';
 
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -73,7 +74,7 @@ export const Navbar: React.FC = () => {
                 <div className="dropdown-section-title">Brand Pages</div>
                 {BRANDS_DATA.map((brand) => (
                   <Link key={brand.id} href={`/antivirus/${brand.slug}`} className="dropdown-item">
-                    <CheckCircle2 size={15} className="dropdown-brand-icon" />
+                    <BrandLogo slug={brand.slug} size={22} />
                     <span>{brand.name} Security</span>
                   </Link>
                 ))}
@@ -139,7 +140,8 @@ export const Navbar: React.FC = () => {
             <div className="mobile-nav-group-title">Brands</div>
             {BRANDS_DATA.map((brand) => (
               <Link key={brand.id} href={`/antivirus/${brand.slug}`} className="mobile-nav-subitem" onClick={() => setMobileMenuOpen(false)}>
-                {brand.name} Antivirus
+                <BrandLogo slug={brand.slug} size={20} />
+                <span>{brand.name} Antivirus</span>
               </Link>
             ))}
             <div className="mobile-nav-divider" />

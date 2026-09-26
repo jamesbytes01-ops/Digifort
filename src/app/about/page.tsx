@@ -69,33 +69,37 @@ export default function AboutPage() {
 
           <div className="pillars-grid">
             <div className="card pillar-card">
-              <div className="pillar-icon">
-                <Award size={24} />
+              <div className="pillar-icon pillar-icon-gold">
+                <Award size={26} className="text-gold-icon" />
               </div>
+              <div className="pillar-visual-chip">Independent Audit</div>
               <h3>1. Objective Brand Catalog</h3>
               <p>We present side-by-side feature matrices so you can evaluate Norton, McAfee, Bitdefender, and Webroot without bias.</p>
             </div>
 
             <div className="card pillar-card">
-              <div className="pillar-icon">
-                <Lock size={24} />
+              <div className="pillar-icon pillar-icon-blue">
+                <Lock size={26} className="text-blue-icon" />
               </div>
+              <div className="pillar-visual-chip blue">Instant License</div>
               <h3>2. Instant Digital Keys</h3>
               <p>Skip physical shipping delays. Your product activation key is issued on-screen and via email immediately upon checkout.</p>
             </div>
 
             <div className="card pillar-card">
-              <div className="pillar-icon">
-                <Users size={24} />
+              <div className="pillar-icon pillar-icon-green">
+                <Users size={26} className="text-green-icon" />
               </div>
+              <div className="pillar-visual-chip green">Human Experts</div>
               <h3>3. Dedicated Support Desk</h3>
               <p>Have questions about compatibility? Contact our support specialists directly at support@getdigifort.com.</p>
             </div>
 
             <div className="card pillar-card">
-              <div className="pillar-icon">
-                <ShieldCheck size={24} />
+              <div className="pillar-icon pillar-icon-purple">
+                <ShieldCheck size={26} className="text-purple-icon" />
               </div>
+              <div className="pillar-visual-chip purple">Official Publishers</div>
               <h3>4. Genuine Guarantee</h3>
               <p>Every license key connects directly to official publisher download servers for official updates and database protection.</p>
             </div>

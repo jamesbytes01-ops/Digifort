@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ShieldCheck, Phone, CheckCircle2, ArrowRight, Laptop, Smartphone, Monitor, Lock } from 'lucide-react';
 import { BRANDS_DATA } from '@/data/brands';
+import { BrandLogo } from './BrandLogo';
 
 export const HeroSection: React.FC = () => {
   return (
@@ -68,9 +69,12 @@ export const HeroSection: React.FC = () => {
             <div className="widget-brands-list">
               {BRANDS_DATA.map((brand, idx) => (
                 <div key={brand.id} className={`widget-brand-row ${idx === 1 ? 'featured' : ''}`}>
-                  <div className="widget-brand-info">
-                    <span className="widget-brand-name">{brand.name}</span>
-                    <span className="widget-brand-device">{brand.products[0]?.plans[0]?.deviceLabel || 'Multi-Device'}</span>
+                  <div className="widget-brand-left">
+                    <BrandLogo slug={brand.slug} size={28} />
+                    <div className="widget-brand-info">
+                      <span className="widget-brand-name">{brand.name}</span>
+                      <span className="widget-brand-device">{brand.products[0]?.plans[0]?.deviceLabel || 'Multi-Device'}</span>
+                    </div>
                   </div>
 
                   <div className="widget-brand-features">
@@ -279,6 +283,12 @@ export const HeroSection: React.FC = () => {
           background-color: #ffffff;
           border: 1.5px solid var(--navy-primary);
           box-shadow: var(--shadow-sm);
+        }
+
+        .widget-brand-left {
+          display: flex;
+          align-items: center;
+          gap: 10px;
         }
 
         .widget-brand-info {

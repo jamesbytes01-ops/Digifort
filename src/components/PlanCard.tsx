@@ -4,6 +4,7 @@ import React from 'react';
 import { Plan, Product } from '@/types';
 import { Check, ShoppingCart, Shield, Monitor, Laptop, Smartphone } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import { BrandLogo } from './BrandLogo';
 
 interface PlanCardProps {
   product: Product;
@@ -21,6 +22,8 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
     ((plan.originalPrice - plan.price) / plan.originalPrice) * 100
   );
 
+  const brandSlug = product.brandId || plan.id;
+
   return (
     <div className={`card plan-card ${plan.isPopular ? 'popular-plan' : ''}`}>
       {plan.isPopular && (
@@ -30,7 +33,10 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
       )}
 
       <div className="plan-header">
-        <span className="brand-name-tag">{product.brandName}</span>
+        <div className="plan-brand-bar">
+          <BrandLogo slug={brandSlug} size={32} />
+          <span className="brand-name-tag">{product.brandName}</span>
+        </div>
         <h3 className="plan-title">{plan.name}</h3>
         <p className="plan-tagline">{plan.tagline}</p>
       </div>
@@ -122,14 +128,23 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
           margin-bottom: 16px;
         }
 
+        .plan-brand-bar {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 8px;
+        }
+
         .brand-name-tag {
-          font-size: 0.75rem;
+          font-size: 0.78rem;
           font-weight: 800;
           text-transform: uppercase;
           letter-spacing: 0.06em;
-          color: var(--text-muted);
-          margin-bottom: 4px;
-          display: block;
+          color: var(--navy-primary);
+          background-color: var(--bg-alt);
+          padding: 2px 8px;
+          border-radius: var(--radius-pill);
+          border: 1px solid var(--border-subtle);
         }
 
         .plan-title {

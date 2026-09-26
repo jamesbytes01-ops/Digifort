@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { ShoppingBag, Trash2, ArrowRight, ShieldCheck, Mail, Monitor, Lock } from 'lucide-react';
+import { BrandLogo } from '@/components/BrandLogo';
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity, subtotal, savings, total, cartCount } = useCart();
@@ -36,7 +37,10 @@ export default function CartPage() {
               {cart.map((item) => (
                 <div key={item.planId} className="card cart-item-card">
                   <div className="item-info">
-                    <div className="brand-pill">{item.brandName}</div>
+                    <div className="cart-brand-badge-wrap">
+                      <BrandLogo slug={item.brandId || item.brandName} size={28} />
+                      <div className="brand-pill">{item.brandName}</div>
+                    </div>
                     <h3 className="item-title">{item.planName}</h3>
                     <div className="item-specs">
                       <span className="spec-item">
@@ -237,14 +241,24 @@ export default function CartPage() {
           flex-wrap: wrap;
         }
 
+        .cart-brand-badge-wrap {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 6px;
+        }
+
         .brand-pill {
           display: inline-block;
           font-size: 0.72rem;
           font-weight: 800;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          color: var(--text-muted);
-          margin-bottom: 4px;
+          color: var(--navy-primary);
+          background-color: var(--bg-alt);
+          padding: 2px 8px;
+          border-radius: var(--radius-pill);
+          border: 1px solid var(--border-subtle);
         }
 
         .item-title {

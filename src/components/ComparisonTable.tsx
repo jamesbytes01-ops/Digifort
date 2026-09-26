@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { BRANDS_DATA, COMPARISON_FEATURES } from '@/data/brands';
 import { Check, X, Shield, ShoppingCart, HelpCircle } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import { BrandLogo } from './BrandLogo';
 
 export const ComparisonTable: React.FC = () => {
   const { addToCart } = useCart();
@@ -46,7 +47,10 @@ export const ComparisonTable: React.FC = () => {
               {BRANDS_DATA.map((brand) => (
                 <th key={brand.id} className="brand-th">
                   <div className="th-brand-box">
-                    <span className="th-brand-name">{brand.name}</span>
+                    <div className="th-logo-wrap">
+                      <BrandLogo slug={brand.slug} size={36} />
+                      <span className="th-brand-name">{brand.name}</span>
+                    </div>
                     <span className="th-brand-tagline">{brand.tagline.slice(0, 45)}...</span>
                     <button
                       onClick={() => handleAddPopularPlan(brand.id)}
@@ -110,7 +114,10 @@ export const ComparisonTable: React.FC = () => {
         {BRANDS_DATA.filter((b) => b.id === selectedBrandMobile).map((brand) => (
           <div key={brand.id} className="card mobile-comparison-card">
             <div className="mobile-card-head">
-              <h3 className="mobile-brand-title">{brand.name} Security</h3>
+              <div className="mobile-brand-title-wrap">
+                <BrandLogo slug={brand.slug} size={30} />
+                <h3 className="mobile-brand-title">{brand.name} Security</h3>
+              </div>
               <span className="mobile-starting-price">From ${brand.startingPrice.toFixed(2)}/yr</span>
             </div>
 
@@ -190,6 +197,12 @@ export const ComparisonTable: React.FC = () => {
           display: flex;
           flex-direction: column;
           gap: 6px;
+        }
+
+        .th-logo-wrap {
+          display: flex;
+          align-items: center;
+          gap: 8px;
         }
 
         .th-brand-name {

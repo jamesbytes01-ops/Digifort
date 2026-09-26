@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { PlanCard } from '@/components/PlanCard';
 import { FAQAccordion } from '@/components/FAQAccordion';
 import { CallToActionBanner } from '@/components/CallToActionBanner';
+import { BrandLogo } from '@/components/BrandLogo';
 import { ShieldCheck, Phone, CheckCircle2, Star, Monitor, Laptop, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 
@@ -43,7 +44,7 @@ export default async function BrandPage({ params }: PageProps) {
         <div className="container brand-hero-grid">
           <div className="brand-hero-content">
             <div className="brand-pill">
-              <ShieldCheck size={16} /> Official {brand.name} Digital Reseller Partner
+              <BrandLogo slug={brand.slug} size={20} /> Official {brand.name} Digital Reseller Partner
             </div>
             <h1 className="brand-hero-title">{brand.heroHeadline}</h1>
             <p className="brand-hero-subheadline">{brand.heroSubheadline}</p>
@@ -72,7 +73,7 @@ export default async function BrandPage({ params }: PageProps) {
           <div className="brand-hero-visual">
             <div className="card brand-visual-card">
               <div className="visual-badge-header">
-                <ShieldCheck size={28} className="visual-shield" />
+                <BrandLogo slug={brand.slug} size={42} />
                 <div>
                   <span className="visual-title">{brand.name} Protection Suite</span>
                   <span className="visual-subtitle">Instant Activation Included</span>

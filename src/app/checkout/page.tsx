@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
 import { CheckoutFormData, OrderDetails } from '@/types';
-import { ShieldCheck, Lock, CreditCard, CheckCircle2, Phone, ShoppingBag, ArrowLeft } from 'lucide-react';
+import { ShieldCheck, Lock, CreditCard, CheckCircle2, Phone, ShoppingBag, ArrowLeft, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export default function CheckoutPage() {

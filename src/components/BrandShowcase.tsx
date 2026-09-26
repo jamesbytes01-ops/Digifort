@@ -2,8 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Star, Shield, ArrowRight, Check } from 'lucide-react';
+import { Star, ArrowRight, Check } from 'lucide-react';
 import { BRANDS_DATA } from '@/data/brands';
+import { BrandLogo } from './BrandLogo';
 
 export const BrandShowcase: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ export const BrandShowcase: React.FC = () => {
             <div key={brand.id} className="card card-hover brand-card">
               <div className="brand-card-top">
                 <div className="brand-badge-icon">
-                  <Shield size={24} className="brand-shield" />
+                  <BrandLogo slug={brand.slug} size={38} />
                 </div>
                 <div className="brand-rating">
                   <Star size={15} className="star-icon" />
@@ -91,18 +92,10 @@ export const BrandShowcase: React.FC = () => {
         }
 
         .brand-badge-icon {
-          width: 44px;
-          height: 44px;
-          border-radius: var(--radius-md);
-          background-color: var(--navy-primary);
-          color: #ffffff;
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-
-        .brand-shield {
-          color: var(--accent-gold);
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
         }
 
         .brand-rating {

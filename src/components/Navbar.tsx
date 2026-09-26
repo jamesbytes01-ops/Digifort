@@ -7,9 +7,12 @@ import { Phone, ShoppingBag, Shield, ChevronDown, Menu, X, CheckCircle2 } from '
 import { useCart } from '@/context/CartContext';
 import { BRANDS_DATA } from '@/data/brands';
 
+import { DigifortLogo } from './DigifortLogo';
+
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
   const { cartCount } = useCart();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [compareDropdownOpen, setCompareDropdownOpen] = useState(false);
@@ -32,14 +35,8 @@ export const Navbar: React.FC = () => {
     <header className={`sticky-navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         {/* BRAND LOGO */}
-        <Link href="/" className="brand-logo" aria-label="Digifort Security Marketplace Home">
-          <div className="logo-icon-wrap">
-            <Shield className="logo-shield-icon" size={24} />
-          </div>
-          <div className="logo-text-wrap">
-            <span className="logo-title">DIGIFORT</span>
-            <span className="logo-subtitle">SHOP.GETDIGIFORT.COM</span>
-          </div>
+        <Link href="/" className="brand-logo-link" aria-label="Digifort Security Marketplace Home">
+          <DigifortLogo size="md" variant="dark" showSubtitle={true} />
         </Link>
 
         {/* DESKTOP CENTER NAVIGATION */}

@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Shield, Phone, Mail, MapPin, Lock, CheckCircle2 } from 'lucide-react';
 import { BRANDS_DATA } from '@/data/brands';
+import { DigifortLogo } from './DigifortLogo';
 
 export const Footer: React.FC = () => {
   return (
@@ -12,14 +13,8 @@ export const Footer: React.FC = () => {
         <div className="footer-top-grid">
           {/* COLUMN 1: BRAND INFO */}
           <div className="footer-col footer-brand-col">
-            <Link href="/" className="footer-logo">
-              <div className="footer-logo-icon">
-                <Shield size={22} />
-              </div>
-              <div>
-                <span className="footer-logo-title">DIGIFORT</span>
-                <span className="footer-logo-subtitle">SHOP.GETDIGIFORT.COM</span>
-              </div>
+            <Link href="/" className="footer-logo-link" aria-label="Digifort Home">
+              <DigifortLogo size="md" variant="light" showSubtitle={true} />
             </Link>
 
             <p className="footer-desc">
@@ -106,7 +101,7 @@ export const Footer: React.FC = () => {
         {/* BOTTOM BAR */}
         <div className="footer-bottom">
           <div className="copyright-text">
-            © {new Date().getFullYear()} DIGIFORT. All rights reserved. shop.getdigifort.com
+            © {new Date().getFullYear()} DIGIFORT. All rights reserved.
           </div>
 
           <div className="payment-badges">

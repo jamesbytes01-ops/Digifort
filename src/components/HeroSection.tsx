@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ShieldCheck, CheckCircle2, ArrowRight, Laptop, Smartphone, Monitor, Lock, Shield, Cpu, Eye, Key } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, ArrowRight, Laptop, Smartphone, Monitor, Lock, Cpu, Eye, Key, Award, Zap } from 'lucide-react';
 import { BRANDS_DATA } from '@/data/brands';
 import { BrandLogo } from './BrandLogo';
 
@@ -10,9 +10,9 @@ export const HeroSection: React.FC = () => {
   const securityModules = [
     {
       id: 'malware',
-      title: 'Malware & Ransomware Shield',
+      title: 'Malware & Ransomware',
       tagline: 'Real-time AI threat detection',
-      badge: 'Zero-Day Active',
+      badge: 'Active Shield',
       icon: Cpu,
       gradient: 'linear-gradient(135deg, #FEF3C7 0%, #FDE047 100%)',
       borderColor: '#FACC15',
@@ -21,8 +21,8 @@ export const HeroSection: React.FC = () => {
     {
       id: 'privacy',
       title: 'Encrypted Privacy & VPN',
-      tagline: 'Bank-grade Wi-Fi encryption',
-      badge: 'No-Log Network',
+      tagline: 'Bank-grade Wi-Fi privacy',
+      badge: 'Encrypted',
       icon: Lock,
       gradient: 'linear-gradient(135deg, #E0F2FE 0%, #38BDF8 100%)',
       borderColor: '#38BDF8',
@@ -30,8 +30,8 @@ export const HeroSection: React.FC = () => {
     },
     {
       id: 'phishing',
-      title: 'Phishing & Web Privacy',
-      tagline: 'Blocks malicious URLs & trackers',
+      title: 'Phishing & Web Guard',
+      tagline: 'Blocks malicious link scams',
       badge: 'Web Shield',
       icon: Eye,
       gradient: 'linear-gradient(135deg, #DCFCE7 0%, #4ADE80 100%)',
@@ -40,8 +40,8 @@ export const HeroSection: React.FC = () => {
     },
     {
       id: 'identity',
-      title: 'Identity & Password Guard',
-      tagline: 'Encrypted vault for credentials',
+      title: 'Identity & Credentials',
+      tagline: 'Encrypted password vault',
       badge: 'Vault Locked',
       icon: Key,
       gradient: 'linear-gradient(135deg, #F3E8FF 0%, #C084FC 100%)',
@@ -53,7 +53,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section className="hero-section">
       <div className="container hero-grid">
-        {/* LEFT COLUMN: HEADLINE & CTAS */}
+        {/* LEFT COLUMN: BALANCED HEADLINE, STATS & CTAS */}
         <div className="hero-content">
           <div className="hero-eyebrow-pill">
             <ShieldCheck size={16} className="eyebrow-icon" />
@@ -77,24 +77,26 @@ export const HeroSection: React.FC = () => {
             </Link>
           </div>
 
-          {/* QUICK HERO TRUST BADGES */}
-          <div className="hero-trust-row">
-            <div className="trust-item">
-              <CheckCircle2 size={16} className="check-icon" />
-              <span>Verified Genuine Digital Licenses</span>
+          {/* KEY MARKETPLACE METRICS ROW */}
+          <div className="hero-metrics-grid">
+            <div className="metric-box">
+              <span className="metric-val">4 Major</span>
+              <span className="metric-lbl">Top Brands</span>
             </div>
-            <div className="trust-item">
-              <CheckCircle2 size={16} className="check-icon" />
-              <span>Transparent Pricing</span>
+            <div className="metric-divider" />
+            <div className="metric-box">
+              <span className="metric-val">Instant</span>
+              <span className="metric-lbl">Digital Delivery</span>
             </div>
-            <div className="trust-item">
-              <CheckCircle2 size={16} className="check-icon" />
-              <span>24/7 Digital Helpdesk</span>
+            <div className="metric-divider" />
+            <div className="metric-box">
+              <span className="metric-val">100%</span>
+              <span className="metric-lbl">Genuine License</span>
             </div>
           </div>
         </div>
 
-        {/* RIGHT COLUMN: PURE CYBERSECURITY THREAT MATRIX SHOWCASE (NON-PRICING) */}
+        {/* RIGHT COLUMN: SLEEK BALANCED CYBERSECURITY MATRIX CARD */}
         <div className="hero-visual">
           <div className="hero-visual-card">
             {/* TOP COMMAND BAR */}
@@ -122,42 +124,31 @@ export const HeroSection: React.FC = () => {
                           border: `1px solid ${mod.borderColor}`,
                         }}
                       >
-                        <IconComp size={20} style={{ color: mod.iconColor }} />
+                        <IconComp size={18} style={{ color: mod.iconColor }} />
                       </div>
                       <span className="mod-status-badge">{mod.badge}</span>
                     </div>
 
                     <h4 className="quad-mod-title">{mod.title}</h4>
                     <p className="quad-mod-desc">{mod.tagline}</p>
-
-                    <div className="quad-mod-footer">
-                      <span className="status-live-text"><CheckCircle2 size={12} /> Shielded</span>
-                    </div>
                   </div>
                 );
               })}
             </div>
 
-            {/* VERIFIED BRAND PARTNERS STRIP */}
-            <div className="brand-partners-strip">
-              <span className="strip-label">Official Publisher Engines:</span>
-              <div className="strip-brand-logos">
+            {/* INTEGRATED BRAND PARTNERS & OS FOOTER STRIP */}
+            <div className="visual-footer-strip">
+              <div className="strip-brands">
                 {BRANDS_DATA.map((b) => (
                   <div key={b.id} className="strip-logo-item" title={`${b.name} Security`}>
-                    <BrandLogo slug={b.slug} size={26} />
-                    <span className="strip-brand-name">{b.name}</span>
+                    <BrandLogo slug={b.slug} size={22} />
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* BOTTOM MULTI-DEVICE COVERAGE BAR */}
-            <div className="visual-bottom-bar">
-              <span className="os-label">Multi-Device Coverage:</span>
-              <div className="os-icons-list">
-                <span className="os-chip"><Monitor size={13} /> Windows</span>
-                <span className="os-chip"><Laptop size={13} /> macOS</span>
-                <span className="os-chip"><Smartphone size={13} /> Android / iOS</span>
+              <div className="strip-os">
+                <Monitor size={14} title="Windows" />
+                <Laptop size={14} title="macOS" />
+                <Smartphone size={14} title="Mobile" />
               </div>
             </div>
           </div>
@@ -169,7 +160,7 @@ export const HeroSection: React.FC = () => {
           background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-alt) 100%);
           display: flex;
           align-items: center;
-          padding-top: 54px;
+          padding-top: 56px;
           padding-bottom: 64px;
           border-bottom: 1px solid var(--border-color);
           position: relative;
@@ -177,13 +168,9 @@ export const HeroSection: React.FC = () => {
 
         .hero-grid {
           display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 60px;
-          align-items: flex-start;
-        }
-
-        .hero-content {
-          margin-top: -16px;
+          grid-template-columns: 1.05fr 0.95fr;
+          gap: 48px;
+          align-items: center;
         }
 
         @media (max-width: 992px) {
@@ -193,10 +180,7 @@ export const HeroSection: React.FC = () => {
           }
           .hero-grid {
             grid-template-columns: 1fr;
-            gap: 40px;
-          }
-          .hero-content {
-            margin-top: 0;
+            gap: 36px;
           }
         }
 
@@ -213,7 +197,7 @@ export const HeroSection: React.FC = () => {
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          margin-bottom: 14px;
+          margin-bottom: 18px;
         }
 
         .eyebrow-icon {
@@ -221,12 +205,12 @@ export const HeroSection: React.FC = () => {
         }
 
         .hero-headline {
-          font-size: 3.25rem;
+          font-size: 3rem;
           font-weight: 700;
           line-height: 1.15;
           letter-spacing: -0.03em;
           color: var(--text-primary);
-          margin-bottom: 24px;
+          margin-bottom: 20px;
         }
 
         .text-highlight {
@@ -234,51 +218,60 @@ export const HeroSection: React.FC = () => {
         }
 
         .hero-subtext {
-          font-size: 1.15rem;
-          line-height: 1.7;
+          font-size: 1.1rem;
+          line-height: 1.65;
           color: var(--text-secondary);
-          margin-bottom: 40px;
-          max-width: 600px;
+          margin-bottom: 32px;
+          max-width: 580px;
         }
 
         @media (max-width: 768px) {
           .hero-headline {
-            font-size: 2.25rem;
+            font-size: 2.2rem;
           }
           .hero-subtext {
             font-size: 1rem;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
           }
         }
 
         .hero-ctas {
           display: flex;
           align-items: center;
-          gap: 18px;
+          gap: 16px;
           flex-wrap: wrap;
-          margin-bottom: 44px;
+          margin-bottom: 32px;
         }
 
-        .hero-trust-row {
+        .hero-metrics-grid {
           display: flex;
           align-items: center;
-          gap: 24px;
-          flex-wrap: wrap;
-          padding-top: 24px;
+          gap: 20px;
+          padding-top: 20px;
           border-top: 1px solid var(--border-color);
         }
 
-        .trust-item {
+        .metric-box {
           display: flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 0.88rem;
-          font-weight: 600;
-          color: var(--text-secondary);
+          flex-direction: column;
         }
 
-        .check-icon {
-          color: var(--success-green);
+        .metric-val {
+          font-size: 0.95rem;
+          font-weight: 800;
+          color: var(--navy-primary);
+        }
+
+        .metric-lbl {
+          font-size: 0.75rem;
+          color: var(--text-muted);
+          font-weight: 600;
+        }
+
+        .metric-divider {
+          width: 1px;
+          height: 28px;
+          background-color: var(--border-color);
         }
 
         /* HERO VISUAL SHOWCASE CARD */
@@ -290,19 +283,19 @@ export const HeroSection: React.FC = () => {
           background-color: #ffffff;
           border: 1px solid var(--border-color);
           border-radius: var(--radius-lg);
-          box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
-          padding: 24px;
+          box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+          padding: 20px;
           position: relative;
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 16px;
         }
 
         .visual-top-bar {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding-bottom: 14px;
+          padding-bottom: 12px;
           border-bottom: 1px solid var(--border-subtle);
         }
 
@@ -313,18 +306,18 @@ export const HeroSection: React.FC = () => {
         }
 
         .pulse-green-dot {
-          width: 9px;
-          height: 9px;
+          width: 8px;
+          height: 8px;
           border-radius: 50%;
           background-color: #22C55E;
-          box-shadow: 0 0 10px #22C55E;
+          box-shadow: 0 0 8px #22C55E;
         }
 
         .engine-status-text {
-          font-size: 0.8rem;
+          font-size: 0.78rem;
           font-weight: 800;
           text-transform: uppercase;
-          letter-spacing: 0.05em;
+          letter-spacing: 0.04em;
           color: var(--navy-primary);
         }
 
@@ -336,7 +329,7 @@ export const HeroSection: React.FC = () => {
           font-weight: 700;
           color: var(--success-green);
           background-color: var(--success-bg);
-          padding: 4px 10px;
+          padding: 3px 8px;
           border-radius: var(--radius-pill);
           border: 1px solid #A7F3D0;
         }
@@ -344,7 +337,7 @@ export const HeroSection: React.FC = () => {
         .hero-module-quad-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 16px;
+          gap: 12px;
         }
 
         @media (max-width: 480px) {
@@ -359,27 +352,26 @@ export const HeroSection: React.FC = () => {
           background-color: var(--bg-main);
           border: 1px solid var(--border-color);
           border-radius: var(--radius-md);
-          padding: 16px;
+          padding: 14px;
           transition: all 0.2s ease;
         }
 
         .quad-module-card:hover {
           background-color: #ffffff;
           border-color: var(--navy-primary);
-          box-shadow: var(--shadow-md);
-          transform: translateY(-2px);
+          box-shadow: var(--shadow-sm);
         }
 
         .quad-card-top {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin-bottom: 12px;
+          margin-bottom: 10px;
         }
 
         .mod-icon-badge {
-          width: 40px;
-          height: 40px;
+          width: 36px;
+          height: 36px;
           border-radius: var(--radius-sm);
           display: flex;
           align-items: center;
@@ -387,118 +379,56 @@ export const HeroSection: React.FC = () => {
         }
 
         .mod-status-badge {
-          font-size: 0.7rem;
+          font-size: 0.68rem;
           font-weight: 700;
           color: var(--navy-primary);
           background-color: #ffffff;
-          padding: 2px 8px;
+          padding: 2px 6px;
           border-radius: var(--radius-pill);
           border: 1px solid var(--border-subtle);
         }
 
         .quad-mod-title {
-          font-size: 0.95rem;
+          font-size: 0.9rem;
           font-weight: 800;
           color: var(--navy-primary);
-          margin-bottom: 4px;
-          line-height: 1.25;
+          margin-bottom: 2px;
+          line-height: 1.2;
         }
 
         .quad-mod-desc {
-          font-size: 0.78rem;
-          color: var(--text-secondary);
-          margin-bottom: 12px;
-          line-height: 1.4;
-        }
-
-        .quad-mod-footer {
-          margin-top: auto;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding-top: 8px;
-          border-top: 1px solid var(--border-subtle);
-        }
-
-        .status-live-text {
           font-size: 0.75rem;
-          font-weight: 700;
-          color: var(--success-green);
-          display: inline-flex;
-          align-items: center;
-          gap: 4px;
+          color: var(--text-secondary);
+          line-height: 1.35;
         }
 
-        .brand-partners-strip {
+        .visual-footer-strip {
           background-color: var(--bg-alt);
           border: 1px solid var(--border-subtle);
           border-radius: var(--radius-md);
-          padding: 12px 14px;
+          padding: 10px 14px;
           display: flex;
           align-items: center;
           justify-content: space-between;
           gap: 12px;
-          flex-wrap: wrap;
         }
 
-        .strip-label {
-          font-size: 0.75rem;
-          font-weight: 700;
-          color: var(--text-muted);
-          text-transform: uppercase;
-          letter-spacing: 0.04em;
-        }
-
-        .strip-brand-logos {
+        .strip-brands {
           display: flex;
           align-items: center;
-          gap: 14px;
+          gap: 12px;
         }
 
         .strip-logo-item {
           display: flex;
           align-items: center;
-          gap: 6px;
         }
 
-        .strip-brand-name {
-          font-size: 0.8rem;
-          font-weight: 800;
-          color: var(--navy-primary);
-        }
-
-        .visual-bottom-bar {
+        .strip-os {
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          padding-top: 14px;
-          border-top: 1px solid var(--border-subtle);
-          flex-wrap: wrap;
           gap: 8px;
-        }
-
-        .os-label {
-          font-size: 0.75rem;
-          font-weight: 700;
           color: var(--text-muted);
-        }
-
-        .os-icons-list {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
-
-        .os-chip {
-          display: inline-flex;
-          align-items: center;
-          gap: 4px;
-          font-size: 0.75rem;
-          font-weight: 600;
-          color: var(--navy-primary);
-          background-color: var(--bg-alt);
-          padding: 3px 8px;
-          border-radius: var(--radius-sm);
         }
       `}</style>
     </section>

@@ -118,10 +118,10 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* LANDING PAGE DISCLAIMER */}
+        {/* PROMINENT FOOTER DISCLAIMER */}
         <div className="footer-landing-disclaimer">
           <p className="landing-disclaimer-text">
-            <strong>Landing Page Disclaimer:</strong> GetDigiFort Digital Commerce PH is an independent digital commerce platform operated by DMB Transit Inc. and is not affiliated with, endorsed by, or sponsored by {brandNameText}. {trademarkText}
+            GetDigiFort Digital Commerce PH is an independent digital commerce platform operated by DMB Transit Inc. and is not affiliated with, endorsed by, or sponsored by {brandNameText}. {trademarkText}
           </p>
         </div>
 
@@ -340,20 +340,22 @@ export const Footer: React.FC = () => {
         }
 
         .footer-landing-disclaimer {
-          padding-top: 24px;
-          padding-bottom: 24px;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          background-color: #1E293B;
+          border: 1px solid #334155;
+          border-left: 4px solid var(--accent-gold, #FACC15);
+          border-radius: var(--radius-md, 8px);
+          padding: 18px 24px;
+          margin-top: 36px;
+          margin-bottom: 32px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .landing-disclaimer-text {
-          font-size: 0.82rem;
+          font-size: 0.88rem;
           line-height: 1.6;
-          color: #94A3B8;
+          color: #E2E8F0;
           margin: 0;
-        }
-
-        .landing-disclaimer-text strong {
-          color: #CBD5E1;
+          font-weight: 400;
         }
 
         .footer-bottom {

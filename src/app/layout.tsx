@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { CartProvider } from '@/context/CartContext';
 import { Navbar } from '@/components/Navbar';
+import { DisclaimerBanner } from '@/components/DisclaimerBanner';
 import { Footer } from '@/components/Footer';
 import { ToastNotification } from '@/components/ToastNotification';
 
@@ -67,6 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <CartProvider>
           <Navbar />
           <main style={{ minHeight: '80vh' }}>{children}</main>
+          <DisclaimerBanner />
           <Footer />
           <ToastNotification />
         </CartProvider>

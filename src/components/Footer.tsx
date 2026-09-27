@@ -101,7 +101,7 @@ export const Footer: React.FC = () => {
         {/* BOTTOM BAR */}
         <div className="footer-bottom">
           <div className="copyright-text">
-            © {new Date().getFullYear()} DIGIFORT. All rights reserved.
+            © {new Date().getFullYear()} GetDigiFort. Owned and Operated by DMB Transit Inc.. All Rights Reserved.
           </div>
 
           <div className="payment-badges">

@@ -28,7 +28,7 @@ export const DisclaimerBanner: React.FC = () => {
       <div className="container">
         <div className="standalone-disclaimer-card">
           <p className="disclaimer-text">
-            AegisByte Digital Commerce PH is an independent digital commerce platform and is not affiliated with, endorsed by, or sponsored by {brandNameText}. {trademarkText} Pricing may change based on plan tier, billing term, and current offers.
+            GetDigiFort Digital Commerce PH is an independent digital commerce platform operated by DMB Transit Inc. and is not affiliated with, endorsed by, or sponsored by {brandNameText}. {trademarkText} Pricing may change based on plan tier, billing term, and current offers.
           </p>
         </div>
       </div>

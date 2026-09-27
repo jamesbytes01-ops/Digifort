@@ -160,10 +160,12 @@ export const HeroSection: React.FC = () => {
           background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-alt) 100%);
           display: flex;
           align-items: center;
-          padding-top: 76px;
-          padding-bottom: 84px;
+          min-height: calc(100vh - 76px);
+          padding-top: 48px;
+          padding-bottom: 48px;
           border-bottom: 1px solid var(--border-color);
           position: relative;
+          box-sizing: border-box;
         }
 
         .hero-grid {
@@ -171,10 +173,12 @@ export const HeroSection: React.FC = () => {
           grid-template-columns: 1.05fr 0.95fr;
           gap: 56px;
           align-items: center;
+          width: 100%;
         }
 
         @media (max-width: 992px) {
           .hero-section {
+            min-height: auto;
             padding-top: 48px;
             padding-bottom: 56px;
           }

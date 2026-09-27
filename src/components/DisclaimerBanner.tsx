@@ -1,14 +1,34 @@
 'use client';
 
 import React from 'react';
+import { usePathname } from 'next/navigation';
 
 export const DisclaimerBanner: React.FC = () => {
+  const pathname = usePathname();
+
+  let brandNameText = 'Norton, McAfee, Bitdefender, or Webroot';
+  let trademarkText = 'Norton, McAfee, Bitdefender, and Webroot and related names are trademarks of their respective owners and are referenced here for comparison purposes only.';
+
+  if (pathname?.includes('/antivirus/norton')) {
+    brandNameText = 'Norton';
+    trademarkText = 'Norton and related names are trademarks of their respective owners and are referenced here for comparison purposes only.';
+  } else if (pathname?.includes('/antivirus/mcafee')) {
+    brandNameText = 'McAfee, LLC';
+    trademarkText = 'McAfee and related names are trademarks of their respective owners and are referenced here for comparison purposes only.';
+  } else if (pathname?.includes('/antivirus/bitdefender')) {
+    brandNameText = 'Bitdefender';
+    trademarkText = 'Bitdefender and related names are trademarks of their respective owners and are referenced here for comparison purposes only.';
+  } else if (pathname?.includes('/antivirus/webroot')) {
+    brandNameText = 'Webroot';
+    trademarkText = 'Webroot and related names are trademarks of their respective owners and are referenced here for comparison purposes only.';
+  }
+
   return (
     <section className="disclaimer-standalone-section">
       <div className="container">
         <div className="standalone-disclaimer-card">
           <p className="disclaimer-text">
-            AegisByte Digital Commerce PH is an independent digital commerce platform and is not affiliated with, endorsed by, or sponsored by McAfee, LLC. McAfee and related names are trademarks of their respective owners and are referenced here for comparison purposes only. Pricing may change based on plan tier, billing term, and current offers.
+            AegisByte Digital Commerce PH is an independent digital commerce platform and is not affiliated with, endorsed by, or sponsored by {brandNameText}. {trademarkText} Pricing may change based on plan tier, billing term, and current offers.
           </p>
         </div>
       </div>

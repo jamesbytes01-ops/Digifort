@@ -2,11 +2,31 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Shield, Phone, Mail, MapPin, Lock, CheckCircle2 } from 'lucide-react';
 import { BRANDS_DATA } from '@/data/brands';
 import { DigifortLogo } from './DigifortLogo';
 
 export const Footer: React.FC = () => {
+  const pathname = usePathname();
+
+  let brandNameText = 'Norton, McAfee, Bitdefender, or Webroot';
+  let trademarkText = 'Norton, McAfee, Bitdefender, and Webroot and related names are trademarks of their respective owners and are referenced here for comparison purposes only.';
+
+  if (pathname?.includes('/antivirus/norton')) {
+    brandNameText = 'Norton';
+    trademarkText = 'Norton and related names are trademarks of their respective owners and are referenced here for comparison purposes only.';
+  } else if (pathname?.includes('/antivirus/mcafee')) {
+    brandNameText = 'McAfee, LLC';
+    trademarkText = 'McAfee and related names are trademarks of their respective owners and are referenced here for comparison purposes only.';
+  } else if (pathname?.includes('/antivirus/bitdefender')) {
+    brandNameText = 'Bitdefender';
+    trademarkText = 'Bitdefender and related names are trademarks of their respective owners and are referenced here for comparison purposes only.';
+  } else if (pathname?.includes('/antivirus/webroot')) {
+    brandNameText = 'Webroot';
+    trademarkText = 'Webroot and related names are trademarks of their respective owners and are referenced here for comparison purposes only.';
+  }
+
   return (
     <footer className="site-footer">
       <div className="container">
@@ -101,7 +121,7 @@ export const Footer: React.FC = () => {
         {/* LANDING PAGE DISCLAIMER */}
         <div className="footer-landing-disclaimer">
           <p className="landing-disclaimer-text">
-            <strong>Landing Page Disclaimer:</strong> GetDigiFort Digital Commerce PH is an independent digital commerce platform operated by DMB Transit Inc. and is not affiliated with, endorsed by, or sponsored by Webroot. Webroot and related names are trademarks of their respective owners and are referenced here for comparison purposes only.
+            <strong>Landing Page Disclaimer:</strong> GetDigiFort Digital Commerce PH is an independent digital commerce platform operated by DMB Transit Inc. and is not affiliated with, endorsed by, or sponsored by {brandNameText}. {trademarkText}
           </p>
         </div>
 

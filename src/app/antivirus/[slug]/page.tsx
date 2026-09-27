@@ -40,9 +40,225 @@ const getBenefitIcon = (iconName?: string, title?: string) => {
   return ShieldCheck;
 };
 
-const getBenefitColorClass = (idx: number) => {
-  const classes = ['gold', 'blue', 'purple', 'green'];
-  return classes[idx % classes.length];
+const getBenefitColorClass = (brandSlug: string, idx: number) => {
+  if (brandSlug === 'norton') return idx % 2 === 0 ? 'gold' : 'blue';
+  if (brandSlug === 'mcafee') return idx % 2 === 0 ? 'red' : 'purple';
+  if (brandSlug === 'bitdefender') return idx % 2 === 0 ? 'blue' : 'gold';
+  return idx % 2 === 0 ? 'green' : 'blue';
+};
+
+/* BESPOKE HERO VISUAL WIDGETS FOR EACH BRAND */
+const renderBrandHeroVisual = (slug: string, brandName: string) => {
+  if (slug === 'norton') {
+    return (
+      <div className="card brand-visual-card norton-visual">
+        <div className="visual-badge-header">
+          <BrandLogo slug="norton" size={42} />
+          <div>
+            <span className="visual-title">Norton 360 Command Center</span>
+            <span className="visual-subtitle"><span className="pulse-dot gold" /> Active Protection Shield</span>
+          </div>
+        </div>
+
+        <div className="widget-box gold-tint">
+          <div className="widget-row">
+            <span className="widget-lbl">AI Threat Detection</span>
+            <span className="widget-val text-gold">99.9% Defended</span>
+          </div>
+          <div className="progress-track">
+            <div className="progress-fill gold" style={{ width: '99.9%' }} />
+          </div>
+        </div>
+
+        <div className="widget-box">
+          <div className="widget-row">
+            <div className="icon-text">
+              <Cloud size={15} className="text-gold" />
+              <span>PC Cloud Backup Vault</span>
+            </div>
+            <span className="widget-val">50 GB Encrypted</span>
+          </div>
+        </div>
+
+        <div className="widget-grid-2">
+          <div className="mini-spec-box">
+            <Eye size={14} className="text-gold" />
+            <div>
+              <span className="mini-title">SafeCam Alert</span>
+              <span className="mini-status">Armed</span>
+            </div>
+          </div>
+          <div className="mini-spec-box">
+            <Lock size={14} className="text-gold" />
+            <div>
+              <span className="mini-title">No-Logs VPN</span>
+              <span className="mini-status">Active</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="supported-os-box">
+          <span className="os-box-label">Supported Operating Systems:</span>
+          <div className="os-chips">
+            <span className="chip"><Monitor size={13} /> Windows 11/10</span>
+            <span className="chip"><Laptop size={13} /> macOS</span>
+            <span className="chip"><Smartphone size={13} /> Android / iOS</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (slug === 'mcafee') {
+    return (
+      <div className="card brand-visual-card mcafee-visual">
+        <div className="visual-badge-header">
+          <BrandLogo slug="mcafee" size={42} />
+          <div>
+            <span className="visual-title">McAfee Protection Center</span>
+            <span className="visual-subtitle"><span className="pulse-dot red" /> Real-time Defense Active</span>
+          </div>
+        </div>
+
+        <div className="mcafee-score-card">
+          <div className="score-badge-circle">
+            <span className="score-big">98</span>
+            <span className="score-small">/ 100</span>
+          </div>
+          <div className="score-info">
+            <h4 className="score-headline">Excellent Protection Score</h4>
+            <p className="score-sub">Guided actions active across all devices</p>
+          </div>
+        </div>
+
+        <div className="widget-box red-tint">
+          <div className="widget-row">
+            <div className="icon-text">
+              <ShieldCheck size={15} className="text-red" />
+              <span>Personal Data Cleanup</span>
+            </div>
+            <span className="widget-val text-red">12 Brokers Cleared</span>
+          </div>
+        </div>
+
+        <div className="widget-grid-2">
+          <div className="mini-spec-box">
+            <Lock size={14} className="text-red" />
+            <div>
+              <span className="mini-title">Automated VPN</span>
+              <span className="mini-status">Bank-Grade</span>
+            </div>
+          </div>
+          <div className="mini-spec-box">
+            <Award size={14} className="text-red" />
+            <div>
+              <span className="mini-title">Device Limit</span>
+              <span className="mini-status">Unlimited</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="supported-os-box">
+          <span className="os-box-label">Supported Operating Systems:</span>
+          <div className="os-chips">
+            <span className="chip"><Monitor size={13} /> Windows</span>
+            <span className="chip"><Laptop size={13} /> macOS</span>
+            <span className="chip"><Smartphone size={13} /> Android / iOS</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (slug === 'bitdefender') {
+    return (
+      <div className="card brand-visual-card bitdefender-visual">
+        <div className="visual-badge-header">
+          <BrandLogo slug="bitdefender" size={42} />
+          <div>
+            <span className="visual-title">Bitdefender Photon™ Dashboard</span>
+            <span className="visual-subtitle"><span className="pulse-dot blue" /> Autopilot Mode ON</span>
+          </div>
+        </div>
+
+        <div className="bitdefender-metrics-grid">
+          <div className="bd-metric-box">
+            <span className="bd-metric-val">0.2s</span>
+            <span className="bd-metric-lbl">Response Speed</span>
+          </div>
+          <div className="bd-metric-box">
+            <span className="bd-metric-val">&lt; 1%</span>
+            <span className="bd-metric-lbl">CPU Impact</span>
+          </div>
+          <div className="bd-metric-box">
+            <span className="bd-metric-val">100%</span>
+            <span className="bd-metric-lbl">Ransomware Shield</span>
+          </div>
+        </div>
+
+        <div className="widget-box blue-tint">
+          <div className="widget-row">
+            <div className="icon-text">
+              <Lock size={15} className="text-blue" />
+              <span>Bitdefender Safepay™ Banking Shield</span>
+            </div>
+            <span className="widget-val text-blue">Secured</span>
+          </div>
+        </div>
+
+        <div className="supported-os-box">
+          <span className="os-box-label">Supported Operating Systems:</span>
+          <div className="os-chips">
+            <span className="chip"><Monitor size={13} /> Windows</span>
+            <span className="chip"><Laptop size={13} /> macOS</span>
+            <span className="chip"><Smartphone size={13} /> Android / iOS</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // WEBROOT
+  return (
+    <div className="card brand-visual-card webroot-visual">
+      <div className="visual-badge-header">
+        <BrandLogo slug="webroot" size={42} />
+        <div>
+          <span className="visual-title">Webroot BrightCloud® Scanner</span>
+          <span className="visual-subtitle"><span className="pulse-dot green" /> Cloud Intelligence Connected</span>
+        </div>
+      </div>
+
+      <div className="webroot-banner">
+        <div className="zap-badge">
+          <Zap size={22} className="text-green" />
+        </div>
+        <div>
+          <h4 className="webroot-banner-title">20-Second Instant Scan</h4>
+          <p className="webroot-banner-sub">60x faster than traditional desktop scanners</p>
+        </div>
+      </div>
+
+      <div className="widget-box green-tint">
+        <div className="widget-row">
+          <span>Memory Footprint</span>
+          <span className="widget-val text-green">3.8 MB RAM (Zero Lag)</span>
+        </div>
+        <div className="progress-track">
+          <div className="progress-fill green" style={{ width: '8%' }} />
+        </div>
+      </div>
+
+      <div className="supported-os-box">
+        <span className="os-box-label">Supported Operating Systems:</span>
+        <div className="os-chips">
+          <span className="chip"><Monitor size={13} /> Windows 11/10</span>
+          <span className="chip"><Laptop size={13} /> macOS</span>
+          <span className="chip"><Smartphone size={13} /> Mobile</span>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default async function BrandPage({ params }: PageProps) {
@@ -53,8 +269,10 @@ export default async function BrandPage({ params }: PageProps) {
     notFound();
   }
 
+  const themeClass = `${brand.slug}-theme`;
+
   return (
-    <div className="brand-landing-page">
+    <div className={`brand-landing-page ${themeClass}`}>
       {/* BRAND HERO */}
       <section className="brand-hero">
         <div className="container brand-hero-grid">
@@ -69,7 +287,7 @@ export default async function BrandPage({ params }: PageProps) {
               <div className="meta-rating">
                 <Star size={16} className="star-gold" />
                 <span>{brand.rating} / 5.0</span>
-                <span className="meta-count">({brand.reviewCount.toLocaleString()} Customer Reviews)</span>
+                <span className="meta-count">({brand.reviewCount.toLocaleString()} Verified Customer Reviews)</span>
               </div>
               <div className="meta-price">
                 <span>Plans starting at <strong>${brand.startingPrice.toFixed(2)} / yr</strong></span>
@@ -87,55 +305,7 @@ export default async function BrandPage({ params }: PageProps) {
           </div>
 
           <div className="brand-hero-visual">
-            <div className="card brand-visual-card">
-              <div className="visual-badge-header">
-                <BrandLogo slug={brand.slug} size={42} />
-                <div>
-                  <span className="visual-title">{brand.name} Cyber Security Suite</span>
-                  <span className="visual-subtitle"><span className="pulse-dot" /> Live Active Shield</span>
-                </div>
-              </div>
-
-              {/* RELATABLE SECURITY MODULE QUAD MATRIX */}
-              <div className="brand-module-quad">
-                {brand.keyBenefits.slice(0, 4).map((b, idx) => {
-                  const BenefitIcon = getBenefitIcon(b.icon, b.title);
-                  return (
-                    <div key={idx} className="brand-module-item">
-                      <div className="b-mod-header">
-                        <div className={`b-mod-icon b-icon-${idx}`}>
-                          <BenefitIcon size={16} />
-                        </div>
-                        <span className="b-mod-chip">Protected</span>
-                      </div>
-                      <span className="b-mod-title">{b.title}</span>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="supported-os-box">
-                <span className="os-box-label">Supported Operating Systems:</span>
-                <div className="os-chips">
-                  <span className="chip"><Monitor size={14} /> Windows 11/10</span>
-                  <span className="chip"><Laptop size={14} /> macOS</span>
-                  <span className="chip"><Smartphone size={14} /> Android</span>
-                  <span className="chip"><Smartphone size={14} /> iOS</span>
-                </div>
-              </div>
-
-              <div className="visual-checklist">
-                <div className="v-check-item">
-                  <CheckCircle2 size={16} className="green-check" /> 100% Genuine Publisher License Key
-                </div>
-                <div className="v-check-item">
-                  <CheckCircle2 size={16} className="green-check" /> Direct Publisher Downloads & Auto-Updates
-                </div>
-                <div className="v-check-item">
-                  <CheckCircle2 size={16} className="green-check" /> Instant Activation & Phone Setup Support
-                </div>
-              </div>
-            </div>
+            {renderBrandHeroVisual(brand.slug, brand.name)}
           </div>
         </div>
       </section>
@@ -147,14 +317,14 @@ export default async function BrandPage({ params }: PageProps) {
             <span className="eyebrow">Key Advantages</span>
             <h2 className="section-title">Why Choose {brand.name} Protection?</h2>
             <p className="section-subtitle">
-              Engineered with multi-layered threat intelligence to keep your data, bank credentials, and family safe.
+              Engineered with multi-layered threat intelligence to keep your devices, bank credentials, and family safe.
             </p>
           </div>
 
           <div className="benefits-grid">
             {brand.keyBenefits.map((benefit, i) => {
               const BenefitIcon = getBenefitIcon(benefit.icon, benefit.title);
-              const colorTheme = getBenefitColorClass(i);
+              const colorTheme = getBenefitColorClass(brand.slug, i);
               return (
                 <div key={i} className="card benefit-card">
                   <div className="benefit-card-top">
@@ -162,7 +332,7 @@ export default async function BrandPage({ params }: PageProps) {
                       <BenefitIcon size={24} />
                     </div>
                     <span className={`benefit-chip chip-${colorTheme}`}>
-                      {colorTheme === 'gold' ? 'Active Shield' : colorTheme === 'blue' ? 'Encrypted' : colorTheme === 'purple' ? 'Vault Protected' : 'Optimized'}
+                      {benefit.title.includes('VPN') ? 'Encrypted VPN' : benefit.title.includes('Backup') ? 'Cloud Vault' : benefit.title.includes('Score') ? 'Identity Score' : benefit.title.includes('Password') ? '256-Bit Vault' : 'Active Shield'}
                     </span>
                   </div>
                   <h3 className="benefit-title">{benefit.title}</h3>

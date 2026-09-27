@@ -82,10 +82,6 @@ export const Navbar: React.FC = () => {
             )}
           </div>
 
-          <Link href="/about" className={`nav-link ${pathname === '/about' ? 'active' : ''}`}>
-            About
-          </Link>
-
           <Link href="/contact" className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}>
             Contact
           </Link>
@@ -145,9 +141,6 @@ export const Navbar: React.FC = () => {
               </Link>
             ))}
             <div className="mobile-nav-divider" />
-            <Link href="/about" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
-              About Digifort
-            </Link>
             <Link href="/contact" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
               Contact Us
             </Link>

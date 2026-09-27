@@ -68,7 +68,7 @@ export const BrandShowcase: React.FC = () => {
         .brands-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 28px;
+          gap: 32px;
         }
 
         @media (max-width: 900px) {
@@ -81,14 +81,14 @@ export const BrandShowcase: React.FC = () => {
           display: flex;
           flex-direction: column;
           background-color: #ffffff;
-          padding: 28px;
+          padding: 32px;
         }
 
         .brand-card-top {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin-bottom: 18px;
+          margin-bottom: 20px;
         }
 
         .brand-badge-icon {
@@ -103,7 +103,7 @@ export const BrandShowcase: React.FC = () => {
           align-items: center;
           gap: 4px;
           font-size: 0.88rem;
-          font-weight: 700;
+          font-weight: 600;
           background-color: var(--bg-alt);
           padding: 4px 10px;
           border-radius: var(--radius-pill);
@@ -122,16 +122,16 @@ export const BrandShowcase: React.FC = () => {
 
         .brand-name {
           font-size: 1.4rem;
-          font-weight: 800;
+          font-weight: 600;
           color: var(--text-primary);
-          margin-bottom: 6px;
+          margin-bottom: 8px;
         }
 
         .brand-tagline {
           font-size: 0.95rem;
           color: var(--text-secondary);
-          line-height: 1.5;
-          margin-bottom: 20px;
+          line-height: 1.6;
+          margin-bottom: 24px;
         }
 
         .brand-highlights {

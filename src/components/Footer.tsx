@@ -121,8 +121,8 @@ export const Footer: React.FC = () => {
         .site-footer {
           background-color: var(--navy-primary);
           color: #94A3B8;
-          padding-top: 64px;
-          padding-bottom: 32px;
+          padding-top: 72px;
+          padding-bottom: 40px;
           border-top: 1px solid #1E293B;
           margin-top: auto;
         }
@@ -130,25 +130,64 @@ export const Footer: React.FC = () => {
         .footer-top-grid {
           display: grid;
           grid-template-columns: 2fr 1fr 1fr 1.25fr;
-          gap: 40px;
-          margin-bottom: 48px;
+          gap: 0;
+          margin-bottom: 56px;
+        }
+
+        .footer-col {
+          padding-left: 36px;
+          padding-right: 36px;
+          border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-col:first-child {
+          padding-left: 0;
+        }
+
+        .footer-col:last-child {
+          padding-right: 0;
+          border-right: none;
         }
 
         @media (max-width: 992px) {
           .footer-top-grid {
             grid-template-columns: 1fr 1fr;
+            gap: 32px 0;
+          }
+          .footer-col {
+            padding-left: 20px;
+            padding-right: 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+          }
+          .footer-col:nth-child(2n) {
+            border-right: none;
           }
           .footer-brand-col {
             grid-column: span 2;
+            padding-left: 0;
+            padding-right: 0;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 32px;
+            margin-bottom: 8px;
           }
         }
 
         @media (max-width: 600px) {
           .footer-top-grid {
             grid-template-columns: 1fr;
+            gap: 28px;
           }
-          .footer-brand-col {
-            grid-column: span 1;
+          .footer-col {
+            padding-left: 0;
+            padding-right: 0;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 24px;
+          }
+          .footer-col:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
           }
         }
 
@@ -173,7 +212,7 @@ export const Footer: React.FC = () => {
         .footer-logo-title {
           display: block;
           font-size: 1.2rem;
-          font-weight: 700;
+          font-weight: 600;
           color: #ffffff;
           letter-spacing: -0.01em;
           line-height: 1;
@@ -182,7 +221,7 @@ export const Footer: React.FC = () => {
         .footer-logo-subtitle {
           display: block;
           font-size: 0.62rem;
-          font-weight: 700;
+          font-weight: 600;
           color: var(--accent-gold);
           letter-spacing: 0.08em;
           margin-top: 2px;
@@ -190,16 +229,16 @@ export const Footer: React.FC = () => {
 
         .footer-desc {
           font-size: 0.9rem;
-          line-height: 1.6;
+          line-height: 1.65;
           color: #CBD5E1;
-          margin-bottom: 20px;
+          margin-bottom: 24px;
           max-width: 440px;
         }
 
         .footer-contact-list {
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 12px;
         }
 
         .footer-contact-item {
@@ -223,8 +262,8 @@ export const Footer: React.FC = () => {
         .footer-col-title {
           color: #ffffff;
           font-size: 1rem;
-          font-weight: 700;
-          margin-bottom: 18px;
+          font-weight: 600;
+          margin-bottom: 20px;
           letter-spacing: -0.01em;
         }
 
@@ -232,7 +271,7 @@ export const Footer: React.FC = () => {
           list-style: none;
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 12px;
         }
 
         .footer-links a {
@@ -250,7 +289,7 @@ export const Footer: React.FC = () => {
           background-color: #1E293B;
           border: 1px solid #334155;
           border-radius: var(--radius-md);
-          padding: 14px;
+          padding: 16px;
         }
 
         .trust-box-header {
@@ -259,8 +298,8 @@ export const Footer: React.FC = () => {
           gap: 8px;
           color: #ffffff;
           font-size: 0.82rem;
-          font-weight: 700;
-          margin-bottom: 4px;
+          font-weight: 600;
+          margin-bottom: 6px;
         }
 
         .trust-icon {
@@ -270,11 +309,11 @@ export const Footer: React.FC = () => {
         .trust-box-text {
           font-size: 0.78rem;
           color: #94A3B8;
-          line-height: 1.4;
+          line-height: 1.45;
         }
 
         .footer-bottom {
-          padding-top: 24px;
+          padding-top: 28px;
           border-top: 1px solid #1E293B;
           display: flex;
           align-items: center;
@@ -291,7 +330,7 @@ export const Footer: React.FC = () => {
         .payment-badges {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 10px;
           flex-wrap: wrap;
         }
 
@@ -299,13 +338,13 @@ export const Footer: React.FC = () => {
           background-color: #1E293B;
           border: 1px solid #334155;
           color: #E2E8F0;
-          padding: 4px 10px;
-          border-radius: 4px;
-          font-size: 0.75rem;
-          font-weight: 600;
+          padding: 5px 12px;
+          border-radius: var(--radius-sm);
+          font-size: 0.76rem;
+          font-weight: 500;
           display: inline-flex;
           align-items: center;
-          gap: 4px;
+          gap: 6px;
         }
 
         .ssl-badge {

@@ -185,7 +185,7 @@ export const TrustSection: React.FC = () => {
         .trust-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 28px;
+          gap: 32px;
         }
 
         @media (max-width: 992px) {
@@ -204,7 +204,7 @@ export const TrustSection: React.FC = () => {
           display: flex;
           flex-direction: column;
           background-color: #ffffff;
-          padding: 28px;
+          padding: 32px;
           border-radius: var(--radius-lg);
           border: 1px solid var(--border-color);
           box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
@@ -223,7 +223,7 @@ export const TrustSection: React.FC = () => {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin-bottom: 18px;
+          margin-bottom: 20px;
         }
 
         .trust-icon-badge {
@@ -242,7 +242,7 @@ export const TrustSection: React.FC = () => {
 
         .trust-tag-chip {
           font-size: 0.72rem;
-          font-weight: 800;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.06em;
           padding: 4px 10px;
@@ -251,22 +251,22 @@ export const TrustSection: React.FC = () => {
 
         .trust-card-title {
           font-size: 1.2rem;
-          font-weight: 800;
+          font-weight: 600;
           color: var(--navy-primary);
-          margin-bottom: 8px;
+          margin-bottom: 10px;
           letter-spacing: -0.01em;
         }
 
         .trust-card-desc {
           font-size: 0.92rem;
           color: var(--text-secondary);
-          line-height: 1.6;
-          margin-bottom: 20px;
+          line-height: 1.65;
+          margin-bottom: 24px;
         }
 
         .box-visual-wrap {
           margin-top: auto;
-          padding-top: 14px;
+          padding-top: 16px;
           border-top: 1px solid var(--border-subtle);
           display: flex;
           align-items: center;
@@ -277,7 +277,7 @@ export const TrustSection: React.FC = () => {
           align-items: center;
           gap: 8px;
           font-size: 0.78rem;
-          font-weight: 700;
+          font-weight: 600;
           color: var(--navy-primary);
           background-color: var(--bg-alt);
           padding: 6px 12px;

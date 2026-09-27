@@ -93,7 +93,7 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
           flex-direction: column;
           position: relative;
           background-color: #ffffff;
-          padding: 28px;
+          padding: 32px 28px;
           border-radius: var(--radius-lg);
           border: 1px solid var(--border-color);
           box-shadow: var(--shadow-sm);
@@ -113,7 +113,7 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
           background-color: var(--accent-gold);
           color: #ffffff;
           font-size: 0.72rem;
-          font-weight: 800;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           padding: 4px 14px;
@@ -125,7 +125,7 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
         }
 
         .plan-header {
-          margin-bottom: 16px;
+          margin-bottom: 18px;
         }
 
         .plan-brand-bar {
@@ -137,27 +137,28 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
 
         .brand-name-tag {
           font-size: 0.78rem;
-          font-weight: 800;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.06em;
           color: var(--navy-primary);
           background-color: var(--bg-alt);
-          padding: 2px 8px;
+          padding: 3px 10px;
           border-radius: var(--radius-pill);
           border: 1px solid var(--border-subtle);
         }
 
         .plan-title {
           font-size: 1.25rem;
-          font-weight: 800;
+          font-weight: 600;
           color: var(--text-primary);
-          line-height: 1.25;
+          line-height: 1.28;
           margin-bottom: 6px;
         }
 
         .plan-tagline {
           font-size: 0.88rem;
           color: var(--text-secondary);
+          line-height: 1.45;
         }
 
         .plan-device-badge-row {
@@ -167,7 +168,7 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
           padding: 10px 14px;
           background-color: var(--bg-alt);
           border-radius: var(--radius-md);
-          margin-bottom: 20px;
+          margin-bottom: 22px;
           border: 1px solid var(--border-subtle);
         }
 
@@ -176,7 +177,7 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
           align-items: center;
           gap: 6px;
           font-size: 0.82rem;
-          font-weight: 700;
+          font-weight: 600;
           color: var(--navy-primary);
         }
 
@@ -189,7 +190,7 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
 
         .plan-price-block {
           margin-bottom: 24px;
-          padding-bottom: 16px;
+          padding-bottom: 18px;
           border-bottom: 1px solid var(--border-subtle);
         }
 
@@ -201,7 +202,7 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
 
         .current-price {
           font-size: 2.1rem;
-          font-weight: 700;
+          font-weight: 600;
           color: var(--navy-primary);
           letter-spacing: -0.02em;
         }
@@ -227,7 +228,7 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
 
         .discount-tag {
           font-size: 0.75rem;
-          font-weight: 700;
+          font-weight: 600;
           color: var(--success-green);
           background-color: var(--success-bg);
           padding: 2px 6px;
@@ -237,18 +238,18 @@ export const PlanCard: React.FC<PlanCardProps> = ({ product, plan }) => {
         .plan-features-list {
           display: flex;
           flex-direction: column;
-          gap: 10px;
-          margin-bottom: 28px;
+          gap: 12px;
+          margin-bottom: 32px;
           flex-grow: 1;
         }
 
         .features-title {
           font-size: 0.8rem;
-          font-weight: 700;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.04em;
           color: var(--text-muted);
-          margin-bottom: 4px;
+          margin-bottom: 6px;
         }
 
         .feature-bullet {

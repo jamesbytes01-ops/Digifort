@@ -203,7 +203,7 @@ export const Navbar: React.FC = () => {
         .logo-title {
           display: block;
           font-size: 1.25rem;
-          font-weight: 700;
+          font-weight: 600;
           letter-spacing: -0.02em;
           color: var(--navy-primary);
           line-height: 1;
@@ -212,7 +212,7 @@ export const Navbar: React.FC = () => {
         .logo-subtitle {
           display: block;
           font-size: 0.65rem;
-          font-weight: 700;
+          font-weight: 600;
           letter-spacing: 0.08em;
           color: var(--accent-gold);
           margin-top: 2px;
@@ -221,12 +221,12 @@ export const Navbar: React.FC = () => {
         .desktop-nav {
           display: flex;
           align-items: center;
-          gap: 28px;
+          gap: 32px;
         }
 
         .nav-link {
           font-size: 0.95rem;
-          font-weight: 600;
+          font-weight: 500;
           color: var(--text-secondary);
           transition: color 0.2s ease;
           display: inline-flex;

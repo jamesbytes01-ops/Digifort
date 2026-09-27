@@ -180,7 +180,7 @@ export const ComparisonTable: React.FC = () => {
           background-color: var(--bg-alt);
           border-bottom: 2px solid var(--border-color);
           font-size: 1rem;
-          font-weight: 800;
+          font-weight: 600;
           color: var(--navy-primary);
         }
 
@@ -207,14 +207,14 @@ export const ComparisonTable: React.FC = () => {
 
         .th-brand-name {
           font-size: 1.2rem;
-          font-weight: 700;
+          font-weight: 600;
           color: var(--navy-primary);
         }
 
         .th-brand-tagline {
           font-size: 0.78rem;
           color: var(--text-muted);
-          line-height: 1.3;
+          line-height: 1.35;
           min-height: 32px;
         }
 
@@ -229,7 +229,7 @@ export const ComparisonTable: React.FC = () => {
         .category-td {
           padding: 12px 24px;
           font-size: 0.85rem;
-          font-weight: 800;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           color: var(--navy-primary);

@@ -80,23 +80,23 @@ export const CallToActionBanner: React.FC = () => {
 
         .cta-title {
           font-size: 1.4rem;
-          font-weight: 700;
+          font-weight: 600;
           color: #ffffff;
-          margin-bottom: 6px;
+          margin-bottom: 8px;
           letter-spacing: -0.01em;
         }
 
         .cta-desc {
           font-size: 0.95rem;
           color: #CBD5E1;
-          line-height: 1.5;
+          line-height: 1.6;
           max-width: 540px;
         }
 
         .cta-actions {
           display: flex;
           align-items: center;
-          gap: 14px;
+          gap: 16px;
           flex-shrink: 0;
         }
 
@@ -111,7 +111,7 @@ export const CallToActionBanner: React.FC = () => {
         }
 
         .cta-phone-btn {
-          font-weight: 800;
+          font-weight: 600;
         }
       `}</style>
     </div>

@@ -160,8 +160,8 @@ export const HeroSection: React.FC = () => {
           background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-alt) 100%);
           display: flex;
           align-items: center;
-          padding-top: 56px;
-          padding-bottom: 64px;
+          padding-top: 76px;
+          padding-bottom: 84px;
           border-bottom: 1px solid var(--border-color);
           position: relative;
         }
@@ -169,18 +169,18 @@ export const HeroSection: React.FC = () => {
         .hero-grid {
           display: grid;
           grid-template-columns: 1.05fr 0.95fr;
-          gap: 48px;
+          gap: 56px;
           align-items: center;
         }
 
         @media (max-width: 992px) {
           .hero-section {
-            padding-top: 36px;
-            padding-bottom: 48px;
+            padding-top: 48px;
+            padding-bottom: 56px;
           }
           .hero-grid {
             grid-template-columns: 1fr;
-            gap: 36px;
+            gap: 40px;
           }
         }
 
@@ -194,10 +194,10 @@ export const HeroSection: React.FC = () => {
           border-radius: var(--radius-pill);
           color: var(--accent-gold-dark);
           font-size: 0.82rem;
-          font-weight: 700;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          margin-bottom: 18px;
+          margin-bottom: 20px;
         }
 
         .eyebrow-icon {
@@ -206,11 +206,11 @@ export const HeroSection: React.FC = () => {
 
         .hero-headline {
           font-size: 3rem;
-          font-weight: 700;
-          line-height: 1.15;
+          font-weight: 600;
+          line-height: 1.18;
           letter-spacing: -0.03em;
           color: var(--text-primary);
-          margin-bottom: 20px;
+          margin-bottom: 22px;
         }
 
         .text-highlight {
@@ -219,9 +219,9 @@ export const HeroSection: React.FC = () => {
 
         .hero-subtext {
           font-size: 1.1rem;
-          line-height: 1.65;
+          line-height: 1.7;
           color: var(--text-secondary);
-          margin-bottom: 32px;
+          margin-bottom: 36px;
           max-width: 580px;
         }
 
@@ -240,14 +240,14 @@ export const HeroSection: React.FC = () => {
           align-items: center;
           gap: 16px;
           flex-wrap: wrap;
-          margin-bottom: 32px;
+          margin-bottom: 36px;
         }
 
         .hero-metrics-grid {
           display: flex;
           align-items: center;
-          gap: 20px;
-          padding-top: 20px;
+          gap: 24px;
+          padding-top: 24px;
           border-top: 1px solid var(--border-color);
         }
 
@@ -258,14 +258,14 @@ export const HeroSection: React.FC = () => {
 
         .metric-val {
           font-size: 0.95rem;
-          font-weight: 800;
+          font-weight: 600;
           color: var(--navy-primary);
         }
 
         .metric-lbl {
           font-size: 0.75rem;
           color: var(--text-muted);
-          font-weight: 600;
+          font-weight: 500;
         }
 
         .metric-divider {
@@ -274,7 +274,7 @@ export const HeroSection: React.FC = () => {
           background-color: var(--border-color);
         }
 
-        /* HERO VISUAL SHOWCASE CARD */
+        /* HERO VISUAL SHOWCASE CARD - EXPANDED FRAME SIZE */
         .hero-visual {
           position: relative;
         }
@@ -283,19 +283,21 @@ export const HeroSection: React.FC = () => {
           background-color: #ffffff;
           border: 1px solid var(--border-color);
           border-radius: var(--radius-lg);
-          box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-          padding: 20px;
+          box-shadow: 0 12px 36px rgba(15, 23, 42, 0.07);
+          padding: 28px 24px;
           position: relative;
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          gap: 20px;
+          min-height: 410px;
+          justify-content: space-between;
         }
 
         .visual-top-bar {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding-bottom: 12px;
+          padding-bottom: 14px;
           border-bottom: 1px solid var(--border-subtle);
         }
 
@@ -315,7 +317,7 @@ export const HeroSection: React.FC = () => {
 
         .engine-status-text {
           font-size: 0.78rem;
-          font-weight: 800;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.04em;
           color: var(--navy-primary);
@@ -326,10 +328,10 @@ export const HeroSection: React.FC = () => {
           align-items: center;
           gap: 6px;
           font-size: 0.72rem;
-          font-weight: 700;
+          font-weight: 600;
           color: var(--success-green);
           background-color: var(--success-bg);
-          padding: 3px 8px;
+          padding: 4px 10px;
           border-radius: var(--radius-pill);
           border: 1px solid #A7F3D0;
         }
@@ -337,7 +339,7 @@ export const HeroSection: React.FC = () => {
         .hero-module-quad-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 12px;
+          gap: 14px;
         }
 
         @media (max-width: 480px) {
@@ -349,10 +351,10 @@ export const HeroSection: React.FC = () => {
         .quad-module-card {
           display: flex;
           flex-direction: column;
-          background-color: var(--bg-main);
+          background-color: var(--bg-surface);
           border: 1px solid var(--border-color);
           border-radius: var(--radius-md);
-          padding: 14px;
+          padding: 16px 18px;
           transition: all 0.2s ease;
         }
 
@@ -366,12 +368,12 @@ export const HeroSection: React.FC = () => {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin-bottom: 10px;
+          margin-bottom: 12px;
         }
 
         .mod-icon-badge {
-          width: 36px;
-          height: 36px;
+          width: 38px;
+          height: 38px;
           border-radius: var(--radius-sm);
           display: flex;
           align-items: center;
@@ -380,33 +382,33 @@ export const HeroSection: React.FC = () => {
 
         .mod-status-badge {
           font-size: 0.68rem;
-          font-weight: 700;
+          font-weight: 600;
           color: var(--navy-primary);
-          background-color: #ffffff;
-          padding: 2px 6px;
+          background-color: var(--bg-alt);
+          padding: 2px 8px;
           border-radius: var(--radius-pill);
           border: 1px solid var(--border-subtle);
         }
 
         .quad-mod-title {
-          font-size: 0.9rem;
-          font-weight: 800;
+          font-size: 0.92rem;
+          font-weight: 600;
           color: var(--navy-primary);
-          margin-bottom: 2px;
-          line-height: 1.2;
+          margin-bottom: 4px;
+          line-height: 1.25;
         }
 
         .quad-mod-desc {
-          font-size: 0.75rem;
+          font-size: 0.76rem;
           color: var(--text-secondary);
-          line-height: 1.35;
+          line-height: 1.4;
         }
 
         .visual-footer-strip {
           background-color: var(--bg-alt);
           border: 1px solid var(--border-subtle);
           border-radius: var(--radius-md);
-          padding: 10px 14px;
+          padding: 12px 16px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -416,7 +418,7 @@ export const HeroSection: React.FC = () => {
         .strip-brands {
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 14px;
         }
 
         .strip-logo-item {
@@ -427,7 +429,7 @@ export const HeroSection: React.FC = () => {
         .strip-os {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 10px;
           color: var(--text-muted);
         }
       `}</style>

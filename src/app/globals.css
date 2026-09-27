@@ -67,6 +67,11 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -95,19 +100,19 @@ img {
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .section-padding {
-  padding-top: 92px;
-  padding-bottom: 92px;
+  padding-top: 104px;
+  padding-bottom: 104px;
 }
 
 @media (max-width: 768px) {
   .section-padding {
-    padding-top: 56px;
-    padding-bottom: 56px;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 }
 
@@ -249,14 +254,14 @@ img {
 /* Section Header */
 .section-header {
   text-align: center;
-  max-width: 740px;
-  margin: 0 auto 56px auto;
+  max-width: 720px;
+  margin: 0 auto 60px auto;
 }
 
 .eyebrow {
   display: inline-block;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent-gold);
@@ -265,9 +270,9 @@ img {
 
 .section-title {
   font-size: 2.35rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
-  line-height: 1.25;
+  line-height: 1.28;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
@@ -275,7 +280,7 @@ img {
 .section-subtitle {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 @media (max-width: 768px) {
@@ -366,14 +371,14 @@ img {
   align-items: center;
   gap: 6px;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   color: var(--accent-gold-dark);
   margin-bottom: 12px;
 }
 .hero-title {
   font-size: 2.75rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--navy-primary);
   line-height: 1.2;
   margin-bottom: 16px;
@@ -383,7 +388,7 @@ img {
   font-size: 1.15rem;
   color: var(--text-secondary);
   max-width: 720px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 .bg-surface {
   background-color: var(--bg-surface);
@@ -396,7 +401,7 @@ img {
 .about-story-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
+  gap: 56px;
   align-items: center;
 }
 @media (max-width: 900px) {
@@ -404,24 +409,24 @@ img {
 }
 .story-title {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--navy-primary);
   margin-bottom: 16px;
 }
 .story-p {
   font-size: 1.05rem;
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
   margin-bottom: 16px;
 }
 .story-stats-card {
-  padding: 32px;
+  padding: 36px;
   background-color: var(--navy-primary);
   color: #ffffff;
 }
 .stats-card-title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 24px;
   color: #ffffff;
   padding-bottom: 12px;
@@ -429,7 +434,7 @@ img {
 }
 .stat-number {
   font-size: 2.2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent-gold);
 }
 .stat-label { font-size: 0.9rem; color: #CBD5E1; }
@@ -441,13 +446,13 @@ img {
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 32px;
 }
 @media (max-width: 768px) {
   .pillars-grid { grid-template-columns: 1fr; }
 }
 .pillar-card {
-  padding: 28px;
+  padding: 32px;
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -491,7 +496,7 @@ img {
 .pillar-visual-chip {
   display: inline-block;
   font-size: 0.7rem;
-  font-weight: 800;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 3px 8px;
@@ -514,14 +519,14 @@ img {
 }
 .pillar-card h3 {
   font-size: 1.2rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--navy-primary);
   margin-bottom: 8px;
 }
 .pillar-card p {
   font-size: 0.92rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .callout-card {
   padding: 48px 32px;
@@ -572,7 +577,7 @@ img {
 .policy-section { margin-bottom: 32px; }
 .policy-section h2 {
   font-size: 1.4rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--navy-primary);
   margin-bottom: 12px;
 }
@@ -588,8 +593,8 @@ img {
 .featured-plans-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-bottom: 40px;
+  gap: 32px;
+  margin-bottom: 48px;
 }
 @media (max-width: 992px) {
   .featured-plans-grid { grid-template-columns: 1fr; }
@@ -608,14 +613,15 @@ img {
 /* COMPARE PAGE STYLES */
 .compare-hero {
   background-color: var(--bg-alt);
-  padding-top: 56px;
-  padding-bottom: 48px;
+  padding-top: 68px;
+  padding-bottom: 56px;
   border-bottom: 1px solid var(--border-color);
 }
 .hero-desc {
   font-size: 1.1rem;
   color: var(--text-secondary);
   max-width: 720px;
+  line-height: 1.65;
 }
 .mt-56 {
   margin-top: 56px;
@@ -630,14 +636,14 @@ img {
 /* BRAND DETAIL PAGE STYLES */
 .brand-hero {
   background-color: var(--bg-alt);
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 68px;
+  padding-bottom: 68px;
   border-bottom: 1px solid var(--border-color);
 }
 .brand-hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 40px;
+  gap: 48px;
   align-items: center;
 }
 @media (max-width: 900px) {
@@ -653,22 +659,22 @@ img {
   border-radius: var(--radius-pill);
   color: var(--accent-gold-dark);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
 .brand-hero-title {
   font-size: 2.75rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--navy-primary);
-  line-height: 1.15;
+  line-height: 1.18;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
 .brand-hero-subheadline {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 24px;
 }
 .brand-hero-meta {
@@ -685,7 +691,7 @@ img {
   align-items: center;
   gap: 6px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--navy-primary);
 }
 .star-gold {
@@ -708,7 +714,7 @@ img {
 }
 .brand-visual-card {
   background-color: #ffffff;
-  padding: 28px;
+  padding: 32px;
 }
 .visual-badge-header {
   display: flex;
@@ -723,7 +729,7 @@ img {
 }
 .visual-title {
   display: block;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 1.15rem;
   color: var(--navy-primary);
 }
@@ -738,7 +744,7 @@ img {
 .os-box-label {
   display: block;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 8px;
@@ -753,7 +759,7 @@ img {
   align-items: center;
   gap: 6px;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 500;
   background-color: var(--bg-alt);
   border: 1px solid var(--border-color);
   padding: 4px 10px;
@@ -770,7 +776,7 @@ img {
   align-items: center;
   gap: 8px;
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-primary);
 }
 .green-check {
@@ -783,13 +789,13 @@ img {
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 32px;
 }
 @media (max-width: 768px) {
   .benefits-grid { grid-template-columns: 1fr; }
 }
 .benefit-card {
-  padding: 24px;
+  padding: 28px;
 }
 .benefit-icon-box {
   width: 44px;
@@ -806,14 +812,14 @@ img {
 }
 .benefit-title {
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--navy-primary);
   margin-bottom: 8px;
 }
 .benefit-desc {
   font-size: 0.92rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .plans-section {
   background-color: var(--bg-alt);
@@ -822,7 +828,7 @@ img {
 .brand-plans-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 32px;
 }
 @media (max-width: 800px) {
   .brand-plans-grid { grid-template-columns: 1fr; }
@@ -837,13 +843,13 @@ img {
 
 .faq-hero {
   background-color: var(--bg-alt);
-  padding-top: 56px;
-  padding-bottom: 48px;
+  padding-top: 68px;
+  padding-bottom: 56px;
   border-bottom: 1px solid var(--border-color);
 }
 
 .policy-body-card {
-  padding: 40px;
+  padding: 44px;
   display: flex;
   flex-direction: column;
   gap: 28px;

@@ -157,7 +157,7 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({
 
         .question-text {
           font-size: 1.05rem;
-          font-weight: 700;
+          font-weight: 600;
           color: var(--navy-primary);
         }
 
@@ -176,9 +176,9 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({
           padding: 0 22px 20px 52px;
           color: var(--text-secondary);
           font-size: 0.95rem;
-          line-height: 1.6;
+          line-height: 1.65;
           border-top: 1px solid var(--border-subtle);
-          padding-top: 14px;
+          padding-top: 16px;
         }
       `}</style>
     </div>

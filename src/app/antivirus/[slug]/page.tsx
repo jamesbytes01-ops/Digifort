@@ -5,7 +5,7 @@ import { PlanCard } from '@/components/PlanCard';
 import { FAQAccordion } from '@/components/FAQAccordion';
 import { CallToActionBanner } from '@/components/CallToActionBanner';
 import { BrandLogo } from '@/components/BrandLogo';
-import { ShieldCheck, Phone, CheckCircle2, Star, Monitor, Laptop, Smartphone } from 'lucide-react';
+import { ShieldCheck, Phone, CheckCircle2, Star, Monitor, Laptop, Smartphone, Lock, Key, Cloud, Eye, Zap, Cpu, Award } from 'lucide-react';
 import Link from 'next/link';
 
 interface PageProps {
@@ -29,6 +29,22 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
+const getBenefitIcon = (iconName?: string, title?: string) => {
+  const lowerTitle = (title || '').toLowerCase();
+  if (iconName === 'Lock' || lowerTitle.includes('vpn') || lowerTitle.includes('privacy')) return Lock;
+  if (iconName === 'Key' || lowerTitle.includes('password') || lowerTitle.includes('vault') || lowerTitle.includes('identity')) return Key;
+  if (iconName === 'Cloud' || lowerTitle.includes('backup') || lowerTitle.includes('storage')) return Cloud;
+  if (iconName === 'Eye' || lowerTitle.includes('phishing') || lowerTitle.includes('web') || lowerTitle.includes('cam')) return Eye;
+  if (iconName === 'Zap' || lowerTitle.includes('performance') || lowerTitle.includes('speed') || lowerTitle.includes('optimization')) return Zap;
+  if (iconName === 'Cpu' || lowerTitle.includes('ai') || lowerTitle.includes('malware') || lowerTitle.includes('threat')) return Cpu;
+  return ShieldCheck;
+};
+
+const getBenefitColorClass = (idx: number) => {
+  const classes = ['gold', 'blue', 'purple', 'green'];
+  return classes[idx % classes.length];
+};
+
 export default async function BrandPage({ params }: PageProps) {
   const { slug } = await params;
   const brand = getBrandBySlug(slug);
@@ -44,7 +60,7 @@ export default async function BrandPage({ params }: PageProps) {
         <div className="container brand-hero-grid">
           <div className="brand-hero-content">
             <div className="brand-pill">
-              <BrandLogo slug={brand.slug} size={20} /> Official {brand.name} Digital Reseller Partner
+              <BrandLogo slug={brand.slug} size={20} /> Official {brand.name} Digital Partner
             </div>
             <h1 className="brand-hero-title">{brand.heroHeadline}</h1>
             <p className="brand-hero-subheadline">{brand.heroSubheadline}</p>
@@ -75,9 +91,27 @@ export default async function BrandPage({ params }: PageProps) {
               <div className="visual-badge-header">
                 <BrandLogo slug={brand.slug} size={42} />
                 <div>
-                  <span className="visual-title">{brand.name} Protection Suite</span>
-                  <span className="visual-subtitle">Instant Activation Included</span>
+                  <span className="visual-title">{brand.name} Cyber Security Suite</span>
+                  <span className="visual-subtitle"><span className="pulse-dot" /> Live Active Shield</span>
                 </div>
+              </div>
+
+              {/* RELATABLE SECURITY MODULE QUAD MATRIX */}
+              <div className="brand-module-quad">
+                {brand.keyBenefits.slice(0, 4).map((b, idx) => {
+                  const BenefitIcon = getBenefitIcon(b.icon, b.title);
+                  return (
+                    <div key={idx} className="brand-module-item">
+                      <div className="b-mod-header">
+                        <div className={`b-mod-icon b-icon-${idx}`}>
+                          <BenefitIcon size={16} />
+                        </div>
+                        <span className="b-mod-chip">Protected</span>
+                      </div>
+                      <span className="b-mod-title">{b.title}</span>
+                    </div>
+                  );
+                })}
               </div>
 
               <div className="supported-os-box">
@@ -92,13 +126,13 @@ export default async function BrandPage({ params }: PageProps) {
 
               <div className="visual-checklist">
                 <div className="v-check-item">
-                  <CheckCircle2 size={16} className="green-check" /> 100% Genuine Digital License Key
+                  <CheckCircle2 size={16} className="green-check" /> 100% Genuine Publisher License Key
                 </div>
                 <div className="v-check-item">
-                  <CheckCircle2 size={16} className="green-check" /> Direct Publisher Downloads & Updates
+                  <CheckCircle2 size={16} className="green-check" /> Direct Publisher Downloads & Auto-Updates
                 </div>
                 <div className="v-check-item">
-                  <CheckCircle2 size={16} className="green-check" /> 30-Day Money-Back Guarantee
+                  <CheckCircle2 size={16} className="green-check" /> Instant Activation & Phone Setup Support
                 </div>
               </div>
             </div>
@@ -113,20 +147,29 @@ export default async function BrandPage({ params }: PageProps) {
             <span className="eyebrow">Key Advantages</span>
             <h2 className="section-title">Why Choose {brand.name} Protection?</h2>
             <p className="section-subtitle">
-              Engineered with advanced threat intelligence to keep your data, bank credentials, and family safe.
+              Engineered with multi-layered threat intelligence to keep your data, bank credentials, and family safe.
             </p>
           </div>
 
           <div className="benefits-grid">
-            {brand.keyBenefits.map((benefit, i) => (
-              <div key={i} className="card benefit-card">
-                <div className="benefit-icon-box">
-                  <ShieldCheck size={24} className="b-icon" />
+            {brand.keyBenefits.map((benefit, i) => {
+              const BenefitIcon = getBenefitIcon(benefit.icon, benefit.title);
+              const colorTheme = getBenefitColorClass(i);
+              return (
+                <div key={i} className="card benefit-card">
+                  <div className="benefit-card-top">
+                    <div className={`benefit-icon-box b-icon-${colorTheme}`}>
+                      <BenefitIcon size={24} />
+                    </div>
+                    <span className={`benefit-chip chip-${colorTheme}`}>
+                      {colorTheme === 'gold' ? 'Active Shield' : colorTheme === 'blue' ? 'Encrypted' : colorTheme === 'purple' ? 'Vault Protected' : 'Optimized'}
+                    </span>
+                  </div>
+                  <h3 className="benefit-title">{benefit.title}</h3>
+                  <p className="benefit-desc">{benefit.description}</p>
                 </div>
-                <h3 className="benefit-title">{benefit.title}</h3>
-                <p className="benefit-desc">{benefit.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

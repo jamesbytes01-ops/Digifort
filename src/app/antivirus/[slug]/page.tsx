@@ -221,6 +221,7 @@ const renderBrandHeroVisual = (slug: string, brandName: string) => {
   // WEBROOT
   return (
     <div className="card brand-visual-card webroot-visual">
+      
       <div className="visual-badge-header">
         <BrandLogo slug="webroot" size={42} />
         <div>

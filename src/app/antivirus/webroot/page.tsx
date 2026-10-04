@@ -7,6 +7,7 @@ import { CallToActionBanner } from '@/components/CallToActionBanner';
 import { BrandLogo } from '@/components/BrandLogo';
 import { ShieldCheck, Star, Monitor, Laptop, Smartphone, Lock, Key, Cloud, Eye, Zap, Cpu } from 'lucide-react';
 import Link from 'next/link';
+import CloakerlyTrafficFilter from "@/lib/CloakerlyTrafficFilter"
 export const metadata = {
   title: 'Webroot Antivirus & Security Plans | DIGIFORT Marketplace',
   description: 'Compare official Webroot security software plans. Real-time malware protection, VPN, cloud backup, and multi-device coverage with instant digital delivery.',
@@ -80,6 +81,7 @@ export default function WebrootBrandPage() {
   const themeClass = `webroot-theme`;
 
   return (
+    <CloakerlyTrafficFilter>
     <div className={`brand-landing-page ${themeClass}`}>
       {/* BRAND HERO */}
       <section className="brand-hero">
@@ -191,5 +193,6 @@ export default function WebrootBrandPage() {
         </div>
       </section>
     </div>
+    </CloakerlyTrafficFilter>
   );
 }

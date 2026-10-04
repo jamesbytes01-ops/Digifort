@@ -219,12 +219,7 @@ const renderBrandHeroVisual = (slug: string, brandName: string) => {
   }
 
   return (
-<<<<<<< HEAD
-    <div className="card brand-visual-card">
-=======
     <div className="card brand-visual-card webroot-visual">
-      
->>>>>>> f12be41c18281b7e83bce867a02d9467ad923972
       <div className="visual-badge-header">
         <BrandLogo slug={slug} size={42} />
         <div>

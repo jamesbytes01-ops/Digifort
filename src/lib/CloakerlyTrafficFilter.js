@@ -51,8 +51,8 @@ const CloakerlyTrafficFilter = ({
         };
         run();
     }, []);
-    if (loading) return (Loading...);
-    if (!allowed) return (Access DeniedYour request has been blocked.);
+    if (loading) return ("Loading...");
+    if (!allowed) return ("Access DeniedYour request has been blocked.");
     return children;
 };
 export default CloakerlyTrafficFilter;

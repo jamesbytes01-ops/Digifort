@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   title: 'DIGIFORT | Digital Antivirus & Security Software Marketplace',
   description: 'Compare and license top antivirus protection plans from Norton, McAfee, Bitdefender, and Webroot with transparent pricing and instant digital delivery.',
   keywords: 'antivirus marketplace, compare antivirus plans, Norton, McAfee, Bitdefender, Webroot, digital license keys, device security',
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: 'DIGIFORT | Digital Security Marketplace',
     description: 'Find and compare top antivirus protection for Windows, Mac, iOS & Android.',

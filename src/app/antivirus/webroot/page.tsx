@@ -79,7 +79,8 @@ export default function WebrootBrandPage() {
 
   const themeClass = `webroot-theme`;
 
-  return (    <div className={`brand-landing-page ${themeClass}`}>
+  return (
+    <div className={`brand-landing-page ${themeClass}`}>
       {/* BRAND HERO */}
       <section className="brand-hero">
         <div className="container brand-hero-grid">
